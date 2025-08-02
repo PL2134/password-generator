@@ -1,0 +1,93 @@
+body {
+    margin: 0;
+    background-color: #1F2937;
+    padding: 50px;
+}
+
+h1 {
+    color: white;
+    font-family: "Karla", sans-serif;
+    font-weight: 800;
+    font-size: 40px;
+    line-height: 40px;
+    letter-spacing: -2.5%;
+    margin-bottom: 10px;
+}
+
+#title-highlight {
+    color: #4ADF86;
+}
+
+h2 {
+    color: #D5D4D8;
+    font-family: "Inter", sans-serif;
+    font-weight: 300; /* Figma is 400*/
+    font-size: 20px;
+    line-height: 28px;
+    margin-top: 0;
+    margin-bottom: 51px;
+}
+
+button {
+    color: #FFFFFF;
+    background-color: #10B981;
+    padding: 9px 16px;
+    font-family: "Inter", sans-serif;
+    font-weight: 400; /* Figma is 500*/
+    font-size: 16px;
+    line-height: 24px;
+    border-radius: 6px;
+    border: none;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #2F3E53;
+    margin: 35px 0;
+    width: 100%;
+}
+
+.password-box {
+    flex: 1;
+    color: #55F991;
+    background-color: #273549;
+    border-radius: 6px;
+    font-family: "Inter", sans-serif;
+    font-weight: 400; /* Figma is 500*/
+    font-size: 16px;
+    line-height: 32px;
+    text-align: center;
+    padding: 4px 15px 3px 15px;
+    min-height: 39px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.password-container {
+    display: flex;
+    gap: 24px;
+    width: 100%;
+}
+
+.length-container {
+    margin-bottom: 20px;
+}
+
+.length-container label {
+    color: #D5D4D8;
+    font-family: "Inter", sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+#length-input {
+    background-color: #273549;
+    border: 1px solid #4a5568;
+    border-radius:4px;
+    color: #55F991;
+    padding: 5px 8px;
+    font-size: 16px;
+    width: 60px;
+}
