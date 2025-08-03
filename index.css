@@ -1,93 +1,209 @@
+/* ================================
+   GLOBAL STYLES & LAYOUT
+   ================================ */
+
+/* Main body styling - dark theme with padding */
 body {
     margin: 0;
-    background-color: #1F2937;
-    padding: 50px;
+    background-color: #1F2937; /* Dark blue-gray background */
+    padding: 50px; /* Space from edges */
 }
 
+/* ================================
+   TYPOGRAPHY - HEADINGS
+   ================================ */
+
+/* Main heading - "Generate a random password" */
 h1 {
     color: white;
-    font-family: "Karla", sans-serif;
-    font-weight: 800;
+    font-family: "Karla", sans-serif; /* Bold display font */
+    font-weight: 800; /* Extra bold */
     font-size: 40px;
-    line-height: 40px;
-    letter-spacing: -2.5%;
-    margin-bottom: 10px;
+    line-height: 50px; /* Slightly loose for better readability */
+    letter-spacing: -2.5%; /* Slightly tighter character spacing */
 }
 
+/* Green highlight for "random password" text */
 #title-highlight {
-    color: #4ADF86;
+    color: #4ADF86; /* Bright green accent color */
 }
 
+/* Subtitle - "Never use an insecure password again" */
 h2 {
-    color: #D5D4D8;
-    font-family: "Inter", sans-serif;
-    font-weight: 300; /* Figma is 400*/
+    color: #D5D4D8; /* Light gray */
+    font-family: "Inter", sans-serif; /* Clean body font */
+    font-weight: 300; /* Light weight for subtlety */
     font-size: 20px;
     line-height: 28px;
-    margin-top: 0;
-    margin-bottom: 51px;
 }
 
-button {
-    color: #FFFFFF;
-    background-color: #10B981;
-    padding: 9px 16px;
-    font-family: "Inter", sans-serif;
-    font-weight: 400; /* Figma is 500*/
-    font-size: 16px;
-    line-height: 24px;
-    border-radius: 6px;
-    border: none;
-}
+/* ================================
+   FORM CONTROLS - INPUT & TOGGLES
+   ================================ */
 
-hr {
-    border: none;
-    border-top: 1px solid #2F3E53;
-    margin: 35px 0;
-    width: 100%;
-}
-
-.password-box {
-    flex: 1;
-    color: #55F991;
-    background-color: #273549;
-    border-radius: 6px;
-    font-family: "Inter", sans-serif;
-    font-weight: 400; /* Figma is 500*/
-    font-size: 16px;
-    line-height: 32px;
-    text-align: center;
-    padding: 4px 15px 3px 15px;
-    min-height: 39px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.password-container {
-    display: flex;
-    gap: 24px;
-    width: 100%;
-}
-
+/* Password length input section */
 .length-container {
-    margin-bottom: 20px;
+    margin-bottom: 20px; /* Space below length input */
 }
 
+/* Label styling for length input */
 .length-container label {
-    color: #D5D4D8;
+    color: #D5D4D8; /* Match subtitle color */
     font-family: "Inter", sans-serif;
     font-weight: 300;
     font-size: 16px;
-    margin-right: 10px;
+    margin-right: 10px; /* Space between label and input */
 }
 
+/* Number input field for password length */
 #length-input {
-    background-color: #273549;
-    border: 1px solid #4a5568;
-    border-radius:4px;
-    color: #55F991;
-    padding: 5px 8px;
+    background-color: #273549; /* Dark input background */
+    border: 1px solid #4a5568; /* Subtle border */
+    border-radius: 4px; /* Slightly rounded corners */
+    color: #55F991; /* Green text to match theme */
+    padding: 5px 8px; /* Internal spacing */
     font-size: 16px;
-    width: 60px;
+    width: 60px; /* Fixed width for number input */
+}
+
+/* ================================
+   TOGGLE SWITCHES
+   ================================ */
+
+/* Container for all toggle options */
+.options-container {
+    margin-bottom: 20px; /* Space below toggles */
+}
+
+/* Individual toggle row (label + switch) */
+.toggle-group {
+    display: flex;
+    align-items: center; /* Vertically center label and toggle */
+    margin-bottom: 12px; /* Space between toggle rows */
+    gap: 12px; /* Space between label and toggle */
+}
+
+/* Toggle labels (Include numbers, Include symbols) */
+.toggle-label {
+    color: #D5D4D8; /* Light gray text */
+    font-family: "Inter", sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    width: 140px; /* Fixed width for alignment */
+}
+
+/* Toggle switch container */
+.toggle-switch {
+    position: relative; /* For absolute positioning of children */
+    width: 50px; /* Switch width */
+    height: 24px; /* Switch height */
+}
+
+/* Hidden checkbox that provides functionality */
+.toggle-switch input[type="checkbox"] {
+    opacity: 0; /* Invisible but functional */
+    width: 100%; /* Fill entire toggle area */
+    height: 100%; /* Fill entire toggle area */
+    position: absolute; /* Position over the visual slider */
+    top: 0;
+    left: 0;
+    margin: 0; /* Remove default margins */
+    cursor: pointer; /* Show hand cursor */
+    z-index: 1; /* Place above visual elements */
+}
+
+/* Visual slider background */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0; /* Fill entire toggle container */
+    background-color: #4a5568; /* Gray when OFF */
+    border-radius: 24px; /* Pill shape */
+    transition: 0.3s; /* Smooth color transition */
+}
+
+/* Visual slider circle/handle */
+.slider:before {
+    position: absolute;
+    content: ""; /* Required for pseudo-element */
+    height: 18px; /* Circle size */
+    width: 18px; /* Circle size */
+    left: 3px; /* Starting position */
+    bottom: 3px; /* Vertical centering */
+    background-color: white; /* White circle */
+    border-radius: 50%; /* Perfect circle */
+    transition: 0.3s; /* Smooth movement animation */
+}
+
+/* Slider background when toggle is ON */
+input:checked + .slider {
+    background-color: #10B981; /* Green when ON */
+}
+
+/* Slider circle position when toggle is ON */
+input:checked + .slider:before {
+    transform: translateX(26px); /* Move circle to right */
+}
+
+/* ================================
+   BUTTON STYLING
+   ================================ */
+
+/* Main generate button */
+button {
+    color: #FFFFFF; /* White text */
+    background-color: #10B981; /* Green background */
+    padding: 9px 16px; /* Internal spacing */
+    font-family: "Inter", sans-serif;
+    font-weight: 400; /* Regular weight for readability */
+    font-size: 16px;
+    line-height: 24px;
+    border-radius: 6px; /* Rounded corners */
+    border: none; /* Remove default border */
+    cursor: pointer; /* Hand cursor on hover */
+}
+
+/* ================================
+   DIVIDER LINE
+   ================================ */
+
+/* Horizontal rule separator */
+hr {
+    border: none; /* Remove default border */
+    border-top: 1px solid #2F3E53; /* Custom thin line */
+    margin: 35px 0; /* Vertical spacing around line */
+    width: 100%; /* Full width */
+}
+
+/* ================================
+   PASSWORD DISPLAY BOXES
+   ================================ */
+
+/* Container for both password boxes */
+.password-container {
+    display: flex; /* Side by side layout */
+    gap: 24px; /* Space between boxes */
+}
+
+/* Individual password display box */
+.password-box {
+    flex: 1; /* Equal width boxes */
+    color: #55F991; /* Green text */
+    background-color: #273549; /* Dark background */
+    border-radius: 6px; /* Rounded corners */
+    font-family: "Inter", sans-serif;
+    font-weight: 400; /* Regular weight */
+    font-size: 16px;
+    line-height: 32px; /* Text line height */
+    text-align: center; /* Center the password text */
+    min-height: 39px; /* Minimum height when empty */
+    cursor: pointer; /* Hand cursor for copying */
+    
+    /* Flexbox for perfect centering */
+    display: flex;
+    align-items: center; /* Vertical centering */
+    justify-content: center; /* Horizontal centering */
 }
