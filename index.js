@@ -68,6 +68,23 @@ function generateRandomPassword() {
    CLIPBOARD FUNCTIONALITY
    ================================ */
 
+function showToast(message) {
+    // Create toast element
+    const toast = document.createElement('div')
+    toast.className = 'toast';
+    toast.textContent = message;
+    document.body.appendChild(toast);
+
+    // Show toast
+    setTimeout(() => toast.classList.add('show'), 100);
+
+    // Hide and remove toast after 2 second
+    setTimeout(() => {
+        toast.classList.remove('show');
+        setTimeout(() => document.body.removeChild(toast), 300);
+    }, 2000);
+}
+
 /**
  * Copies text to user's clipboard with fallback support
  * @param {string} text - The text to copy to clipboard
@@ -76,13 +93,11 @@ function copyToClipboard(text) {
     // Try modern Clipboard API first (works in secure contexts)
     if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(text)
-            .then(function() {
-                console.log("Password copied to clipboard!")
+            .then(() => {
+                console.log("Password copied to clipboard!") // Console log
+                showToast("Password copied to clipboard!")   // Toast notification
             })
-            .catch(function(error) {
-                console.log("Clipboard API failed, trying fallback...")
-                fallbackCopy(text) // Use backup method if modern API fails
-            })
+            .catch(() => fallbackCopy(text))    // Use backup method if modern API fails  
     } else {
         // Use fallback method for older browsers or insecure contexts
         fallbackCopy(text)
@@ -103,9 +118,11 @@ function fallbackCopy(text) {
     try {
         // Use older execCommand method to copy
         document.execCommand('copy')
-        console.log("Password copied using fallback method!")
+        console.log("Password copied using fallback method!")  // Console log
+        showToast("Password copied to clipboard!")             // Toast notification
     } catch (error) {
         console.log("Copy failed:", error)
+        showToast("Copy failed - please try again")           // Error toast
     }
     
     // Clean up - remove temporary element

@@ -207,3 +207,31 @@ hr {
     align-items: center; /* Vertical centering */
     justify-content: center; /* Horizontal centering */
 }
+
+.instruction {
+    color: #9CA3AF;
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+/* Toast notification */
+.toast {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #10B981;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 6px;
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1000;
+}
+
+.toast.show {
+    opacity: 1;
+}

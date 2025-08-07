@@ -4,7 +4,7 @@ A fully functional random password generator web application built from scratch 
 
 ## 🚀 Live Demo
 
-**[View Live Project](#)** *(Add your deployed URL here)*
+**[View Live Project](https://password-generator-pl.netlify.app/)**
 
 ## 📖 Project Overview
 
@@ -64,7 +64,7 @@ This project establishes crucial skills needed for future AI integrations such a
 
 ### Advanced User Experience
 - **Dual password output** - generates two unique passwords for comparison or backup
-- **One-click copying** - click any password box to instantly copy to clipboard
+- **One-click copying** - click any password box to instantly copy to clipboard with toast notification
 - **Visual feedback** - console logging and smooth animations confirm user actions
 - **Professional styling** - dark theme with green accent colors and consistent typography
 
@@ -84,19 +84,17 @@ This project establishes crucial skills needed for future AI integrations such a
 ```
 password-generator/
 │
-├── index.html          # Semantic HTML structure with form elements
-├── index.css           # Complete styling including custom toggle switches
-├── index.js            # Password generation logic and UI interactions
-├── README.md           # Comprehensive project documentation
-├── package.json        # Project configuration (Vite development server)
-└── vite.config.js      # Vite build configuration
+├── index.html          # Main HTML structure with semantic markup
+├── index.css           # Complete styling including custom toggle switches  
+├── index.js            # Password generation logic and user interactions
+└── README.md           # Project documentation
 ```
 
 ## 💻 Installation & Setup
 
 ### Prerequisites
-- Node.js installed on your machine
 - Modern web browser with ES6+ support
+- Optional: Live Server extension for VS Code (for local development)
 
 ### Getting Started
 1. **Clone the repository**
@@ -105,27 +103,18 @@ password-generator/
    cd password-generator
    ```
 
-2. **Install dependencies**
+2. **Option A: Simple setup (recommended)**
+   - Open `index.html` directly in your browser, or
+   - Use VS Code with Live Server extension for auto-refresh during development
+
+3. **Option B: With development server (if you prefer npm)**
    ```bash
-   npm install
+   npm install  # Install Vite dev server
+   npm run dev  # Start development server
    ```
 
-3. **Start development server**
-   ```bash
-   npm start
-   # or
-   npm run dev
-   ```
-
-4. **Build for production**
-   ```bash
-   npm run build
-   ```
-
-5. **Preview production build**
-   ```bash
-   npm run preview
-   ```
+### Project Structure
+This is a **static web application** - no build process required! The project works directly in any modern browser.
 
 ## 🎨 Design Decisions
 
